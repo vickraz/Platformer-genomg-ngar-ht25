@@ -11,8 +11,20 @@ config_version=5
 [application]
 
 config/name="Platformer genomgångar"
+run/main_scene="uid://qvmks4kgs7xx"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://dtwnonitummn4"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Traps"
 
 [rendering]
 
