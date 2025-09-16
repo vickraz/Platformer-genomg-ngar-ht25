@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://qvmks4kgs7xx"]
+[gd_scene load_steps=6 format=4 uid="uid://qvmks4kgs7xx"]
 
 [ext_resource type="Texture2D" uid="uid://clpajx4utjfhk" path="res://Assets/tileset.png" id="1_iti4p"]
 [ext_resource type="Texture2D" uid="uid://wog5cgiv6myi" path="res://Assets/Space Background.png" id="2_dtjkg"]
+[ext_resource type="PackedScene" uid="uid://b2msivyy6a26u" path="res://Scenes/player.tscn" id="3_eglq2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtjkg"]
 texture = ExtResource("1_iti4p")
@@ -388,3 +389,6 @@ layer = -99
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_dtjkg")
 centered = false
+
+[node name="Player" parent="." instance=ExtResource("3_eglq2")]
+position = Vector2(182, 368)
