@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 const MAX_SPEED = 300
 const ACC = 2500
@@ -166,9 +167,11 @@ func _enter_edge_state(rotation_direction: String):
 		edge_input_x = 1
 		up_direction = up_direction.rotated(PI/2)
 		tween.tween_property(self, "rotation", rotation + PI/2, 0.1)
-	
-func _enter_dead_state():
-	pass
+
+
+################ PUBLIC FUNCTIONS ################################
+func enter_dead_state(dir: Vector2) -> void:
+	print("DÖÖÖD")
 
 
 ################## SIGNALS #############################
