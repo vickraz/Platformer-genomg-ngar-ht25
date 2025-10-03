@@ -113,4 +113,12 @@ target_position = Vector2(0, 25)
 wait_time = 0.1
 one_shot = true
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-0.5, -25.5)
+scale = Vector2(2.75, 3.55)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+update_rotation = false
+
 [connection signal="timeout" from="EdgeStateTimer" to="." method="_on_edge_state_timer_timeout"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

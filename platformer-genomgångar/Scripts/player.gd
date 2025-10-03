@@ -1,10 +1,13 @@
 extends CharacterBody2D
 class_name Player
 
+signal dead
+
 const MAX_SPEED = 300
 const ACC = 2500
 const JUMP_VELOCITY = 600
 const GRAVITY = 1250
+const KNOCKBACK_SPEED = 700
 
 enum{IDLE, WALK, AIR, EDGE, DEAD}
 
@@ -12,6 +15,7 @@ var state = IDLE
 var want_to_jump: bool = false
 var jump_buffer: float = 0.0
 var edge_input_x: float = 0.0
+var is_dead: bool = false
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var anim: AnimationPlayer = $AnimationPlayer
@@ -135,7 +139,7 @@ func _edge_state(delta: float) -> void:
 	_movement(delta, edge_input_x)
 
 func _dead_state(delta: float) -> void:
-	pass
+	_movement(delta, 0)
 
 ############### ENTER STATE FUNCTION #######################
 func _enter_idle_state():
@@ -171,7 +175,17 @@ func _enter_edge_state(rotation_direction: String):
 
 ################ PUBLIC FUNCTIONS ################################
 func enter_dead_state(dir: Vector2) -> void:
-	print("DÖÖÖD")
+	if not is_dead:
+		is_dead = true
+		state = DEAD
+		velocity = dir * KNOCKBACK_SPEED
+		anim.play("Air")
+		$CollisionShape2D.set_deferred("disabled", true)
+		$RemoteTransform2D.remote_path = ""
+		var tween = get_tree().create_tween()
+		tween.tween_property(self, "rotation", rotation + PI, 0.5)
+		
+		
 
 
 ################## SIGNALS #############################
@@ -179,3 +193,9 @@ func enter_dead_state(dir: Vector2) -> void:
 func _on_edge_state_timer_timeout() -> void:
 	_enter_walk_state()
 	floor_snap_length = 5
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	emit_signal("dead")
+	queue_free()
+	#print("DÖÖÖÖD")

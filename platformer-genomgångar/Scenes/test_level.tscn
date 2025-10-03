@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://qvmks4kgs7xx"]
+[gd_scene load_steps=8 format=4 uid="uid://qvmks4kgs7xx"]
 
+[ext_resource type="Script" uid="uid://dd18ld26inqrh" path="res://Scripts/level.gd" id="1_7w7ni"]
 [ext_resource type="Texture2D" uid="uid://clpajx4utjfhk" path="res://Assets/tileset.png" id="1_iti4p"]
 [ext_resource type="Texture2D" uid="uid://wog5cgiv6myi" path="res://Assets/Space Background.png" id="2_dtjkg"]
 [ext_resource type="PackedScene" uid="uid://b2msivyy6a26u" path="res://Scenes/player.tscn" id="3_eglq2"]
@@ -377,6 +378,7 @@ terrain_set_0/terrain_0/color = Color(0.724563, 0, 0.167228, 1)
 sources/0 = SubResource("TileSetAtlasSource_dtjkg")
 
 [node name="Test_level" type="Node2D"]
+script = ExtResource("1_7w7ni")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(3, 3)
@@ -406,3 +408,13 @@ up_direction = Vector2(-1, 0)
 position = Vector2(971, 446)
 rotation = 1.5708
 up_direction = Vector2(1, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = -1000
+limit_right = 4000
+limit_bottom = 1000
+position_smoothing_enabled = true
+
+[node name="PlayerSpawnPos" type="Marker2D" parent="."]
+position = Vector2(179, 365)
