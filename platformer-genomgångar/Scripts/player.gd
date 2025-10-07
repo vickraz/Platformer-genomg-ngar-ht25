@@ -196,6 +196,7 @@ func _on_edge_state_timer_timeout() -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	emit_signal("dead")
-	queue_free()
+	if is_dead:
+		emit_signal("dead")
+		queue_free()
 	#print("DÖÖÖÖD")

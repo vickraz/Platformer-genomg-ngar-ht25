@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Platformer genomgångar"
-run/main_scene="uid://qvmks4kgs7xx"
+run/main_scene="uid://gqmbovr8f4rf"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://dtwnonitummn4"
 
