@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://xxe1kfbitok4"]
+
+[ext_resource type="Script" uid="uid://dfpd8nkmj086t" path="res://Scripts/level_manager.gd" id="1_f6wcy"]
+
+[node name="LevelManager" type="Node2D"]
+script = ExtResource("1_f6wcy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -370.0
+offset_top = -121.0
+offset_right = 1700.0
+offset_bottom = 809.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

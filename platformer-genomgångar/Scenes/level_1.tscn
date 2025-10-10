@@ -12,3 +12,6 @@ tile_map_data = PackedByteArray("AAADAAkAAAABAAEAAAAEAAkAAAABAAEAAAAFAAkAAAABAAE
 position = Vector2(661, 451)
 rotation = -1.5708
 up_direction = Vector2(-1, 0)
+
+[node name="Heart" parent="." index="7"]
+position = Vector2(892, 425)

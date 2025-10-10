@@ -15,6 +15,10 @@ run/main_scene="uid://gqmbovr8f4rf"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="uid://dtwnonitummn4"
 
+[autoload]
+
+LevelManager="*res://Scenes/level_manager.tscn"
+
 [display]
 
 window/stretch/mode="canvas_items"

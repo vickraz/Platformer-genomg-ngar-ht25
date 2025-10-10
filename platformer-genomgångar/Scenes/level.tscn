@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://qvmks4kgs7xx"]
+[gd_scene load_steps=9 format=3 uid="uid://qvmks4kgs7xx"]
 
 [ext_resource type="Script" uid="uid://dd18ld26inqrh" path="res://Scripts/level.gd" id="1_0f350"]
 [ext_resource type="Texture2D" uid="uid://clpajx4utjfhk" path="res://Assets/tileset.png" id="2_8c0lf"]
 [ext_resource type="Texture2D" uid="uid://wog5cgiv6myi" path="res://Assets/Space Background.png" id="3_754fn"]
 [ext_resource type="FontFile" uid="uid://2i2xr13aqolg" path="res://Fonts ant themes/pixel_font.ttf" id="4_bvt00"]
 [ext_resource type="PackedScene" uid="uid://b2msivyy6a26u" path="res://Scenes/player.tscn" id="5_oqgf2"]
+[ext_resource type="PackedScene" uid="uid://hd3bgsxvr33q" path="res://Scenes/heart.tscn" id="6_0f350"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtjkg"]
 texture = ExtResource("2_8c0lf")
@@ -417,3 +418,6 @@ theme_override_constants/outline_size = 1
 theme_override_fonts/font = ExtResource("4_bvt00")
 theme_override_font_sizes/font_size = 26
 text = "Time: mm:ss"
+
+[node name="Heart" parent="." instance=ExtResource("6_0f350")]
+position = Vector2(681, 326)
