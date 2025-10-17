@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://qvmks4kgs7xx"]
+[gd_scene load_steps=10 format=3 uid="uid://qvmks4kgs7xx"]
 
 [ext_resource type="Script" uid="uid://dd18ld26inqrh" path="res://Scripts/level.gd" id="1_0f350"]
 [ext_resource type="Texture2D" uid="uid://clpajx4utjfhk" path="res://Assets/tileset.png" id="2_8c0lf"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://2i2xr13aqolg" path="res://Fonts ant themes/pixel_font.ttf" id="4_bvt00"]
 [ext_resource type="PackedScene" uid="uid://b2msivyy6a26u" path="res://Scenes/player.tscn" id="5_oqgf2"]
 [ext_resource type="PackedScene" uid="uid://hd3bgsxvr33q" path="res://Scenes/heart.tscn" id="6_0f350"]
+[ext_resource type="Texture2D" uid="uid://dkit1iosmegx8" path="res://Assets/heart.png" id="6_8c0lf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtjkg"]
 texture = ExtResource("2_8c0lf")
@@ -419,5 +420,44 @@ theme_override_fonts/font = ExtResource("4_bvt00")
 theme_override_font_sizes/font_size = 26
 text = "Time: mm:ss"
 
+[node name="HighscoreLabel" type="Label" parent="HUD"]
+modulate = Color(0.672419, 0.616408, 5.77569e-07, 1)
+offset_left = 40.0
+offset_top = 69.0
+offset_right = 226.0
+offset_bottom = 96.0
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_bvt00")
+theme_override_font_sizes/font_size = 26
+text = "Best: mm:ss"
+
+[node name="HeartsContainer" type="HBoxContainer" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="HeartSymbol" type="TextureRect" parent="HUD/HeartsContainer"]
+modulate = Color(0.961181, 0, 0.0394054, 1)
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+texture = ExtResource("6_8c0lf")
+
+[node name="HeartSymbol2" type="TextureRect" parent="HUD/HeartsContainer"]
+modulate = Color(0.961181, 0, 0.0394054, 1)
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+texture = ExtResource("6_8c0lf")
+
+[node name="HeartSymbol3" type="TextureRect" parent="HUD/HeartsContainer"]
+modulate = Color(0.961181, 0, 0.0394054, 1)
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 2
+texture = ExtResource("6_8c0lf")
+
 [node name="Heart" parent="." instance=ExtResource("6_0f350")]
 position = Vector2(681, 326)
+
+[node name="GameOverMenu" type="CanvasLayer" parent="."]

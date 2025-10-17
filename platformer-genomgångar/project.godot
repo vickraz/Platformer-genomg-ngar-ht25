@@ -18,6 +18,7 @@ config/icon="uid://dtwnonitummn4"
 [autoload]
 
 LevelManager="*res://Scenes/level_manager.tscn"
+Globals="*res://Scripts/Globals.gd"
 
 [display]
 
